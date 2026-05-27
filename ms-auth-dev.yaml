@@ -1,2 +1,21 @@
 booking:
-    property: Auth Profile Dev Profile
+  property: Auth Profile Dev Profile
+
+spring:
+  application:
+    name: ms-auth
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/authdb
+
+
+server:
+  port: 7081
+
+# JWT configuration
+jwt:
+  secret: myVerySecretKeyForJwtAuthentication123456789
+
+# 1 hour in milliseconds
+jwt:
+  expiration: 3600000

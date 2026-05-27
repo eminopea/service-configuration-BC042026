@@ -1,5 +1,5 @@
 booking:
-    property: Gateway Profile Dev Profile
+  property: Gateway Profile Dev Profile
 
 server:
   port: 8080
@@ -7,3 +7,30 @@ server:
 spring:
   application:
     name: ms-api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: ms-listener
+          uri: http://localhost:7083
+          predicates:
+            - Path=/api/v1/sale/**
+
+        - id: demo
+          uri: http://localhost:7080
+          predicates:
+            - Path=/api/v1/**
+
+        - id: ms-auth
+          uri: http://localhost:7081
+          predicates:
+            - Path=/auth/**
+
+        - id: ms-pedidos
+          uri: http://localhost:7082
+          predicates:
+            - Path=/pedidos/**, /productos/**
+
+jwt:
+  secret: myVerySecretKeyForJwtAuthentication123456789
+  expiration: 3600000
