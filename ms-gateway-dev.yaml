@@ -1,2 +1,9 @@
 booking:
     property: Gateway Profile Dev Profile
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ms-api-gateway
