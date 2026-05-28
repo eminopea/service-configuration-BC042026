@@ -15,7 +15,4 @@ server:
 # JWT configuration
 jwt:
   secret: myVerySecretKeyForJwtAuthentication123456789
-
-# 1 hour in milliseconds
-jwt:
-  expiration: 3600000
+  expiration: 3600000 # 1 hour in milliseconds
