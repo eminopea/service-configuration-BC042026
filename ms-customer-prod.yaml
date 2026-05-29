@@ -1,0 +1,13 @@
+booking:
+  property: Customer Profile Dev Profile
+
+spring:
+  application:
+    name: ms-customer
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/customerdb
+
+
+server:
+  port: 7082
