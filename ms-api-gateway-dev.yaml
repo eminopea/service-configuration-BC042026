@@ -16,25 +16,15 @@ spring:
           lower-case-service-id: true
 
       routes:
-        - id: ms-listener
-          uri: http://localhost:7083
-          predicates:
-            - Path=/api/v1/sale/**
-
-        - id: demo
-          uri: http://localhost:7080
-          predicates:
-            - Path=/api/v1/**
-
         - id: ms-auth
           uri: http://localhost:7081
           predicates:
             - Path=/auth/**
 
-        - id: ms-pedidos
+        - id: ms-customer
           uri: http://localhost:7082
           predicates:
-            - Path=/pedidos/**, /productos/**
+            - Path=/customer/**
 
 eureka:
   client:
