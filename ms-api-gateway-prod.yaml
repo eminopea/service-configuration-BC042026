@@ -10,26 +10,26 @@ spring:
 
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
       routes:
-        - id: ms-listener
-          uri: http://localhost:7083
-          predicates:
-            - Path=/api/v1/sale/**
-
-        - id: demo
-          uri: http://localhost:7080
-          predicates:
-            - Path=/api/v1/**
-
         - id: ms-auth
-          uri: http://localhost:7081
+          uri: lb://ms-auth
           predicates:
             - Path=/auth/**
 
-        - id: ms-pedidos
-          uri: http://localhost:7082
+        - id: ms-customer
+          uri: lb://ms-customer
           predicates:
-            - Path=/pedidos/**, /productos/**
+            - Path=/customers/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 
 jwt:
   secret: myVerySecretKeyForJwtAuthentication123456789

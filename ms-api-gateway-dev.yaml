@@ -17,14 +17,14 @@ spring:
 
       routes:
         - id: ms-auth
-          uri: http://localhost:7081
+          uri: lb://ms-auth
           predicates:
             - Path=/auth/**
 
         - id: ms-customer
-          uri: http://localhost:7082
+          uri: lb://ms-customer
           predicates:
-            - Path=/customer/**
+            - Path=/customers/**
 
 eureka:
   client:
