@@ -1,0 +1,56 @@
+booking:
+  property: Profile Account Dev Profile
+
+spring:
+  application:
+    name: ms-account
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/accountdb
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+server:
+  port: 7083
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+  endpoint:
+    health:
+      show-details: always
+
+# CONFIG RESILIENCE4J
+resilience4j:
+  circuitbreaker:
+    instances:
+
+      customerServiceCB:
+        registerHealthIndicator: true
+
+        # Configuración de comportamiento
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+
+        waitDurationInOpenState: 10s
+
+        permittedNumberOfCallsInHalfOpenState: 3
+
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+  timelimiter:
+    instances:
+      customerServiceCB:
+        timeoutDuration: 2s   # (timeout 2s)
+
+# Configuración WebClient (si usas Eureka)
+customer:
+  service:
+    url: http://ms-customer   # usando Eureka
