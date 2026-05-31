@@ -54,8 +54,8 @@ resilience4j:
 services:
   customer:
     url: http://ms-customer
-  credit:
-    url: http://ms-credit
+  card:
+    url: http://ms-card
   transaction:
     url: http://ms-transaction
 
