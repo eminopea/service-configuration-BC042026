@@ -51,9 +51,13 @@ resilience4j:
         timeoutDuration: 2s   # (timeout 2s)
 
 # Configuración WebClient (si usas Eureka)
-customer:
-  service:
-    url: http://ms-customer   # usando Eureka
+services:
+  customer:
+    url: http://ms-customer
+  card:
+    url: http://ms-card
+  transaction:
+    url: http://ms-transaction
 
 account:
   savings:
