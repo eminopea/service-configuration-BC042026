@@ -54,3 +54,11 @@ resilience4j:
 customer:
   service:
     url: http://ms-customer   # usando Eureka
+
+account:
+  savings:
+    max-transactions: 10
+  current:
+    maintenance-fee: 5.00
+  fixed-term:
+    allowed-day: 15
