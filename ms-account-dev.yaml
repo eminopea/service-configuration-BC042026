@@ -64,7 +64,7 @@ services:
   customer:
     url: http://ms-customer
   card:
-    url: http://ms-card
+    url: http://localhost:8085
   transaction:
     url: http://ms-transaction
 
