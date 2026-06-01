@@ -8,6 +8,19 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/accountdb
 
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+    properties:
+      spring:
+        json:
+          trusted:
+            packages: "*"
+
 eureka:
   client:
     service-url:
@@ -75,3 +88,9 @@ account:
     maintenance-fee: 5.00
   fixed-term:
     allowed-day: 15
+
+
+app:
+  kafka:
+    topics:
+      account-created: account-created

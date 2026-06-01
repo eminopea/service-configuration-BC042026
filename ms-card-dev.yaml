@@ -1,0 +1,17 @@
+booking:
+  property: Profile Card Dev Profile
+
+spring:
+  application:
+    name: ms-card
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/carddb
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+server:
+  port: 7084
