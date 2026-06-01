@@ -57,6 +57,8 @@ resilience4j:
       customerServiceCB:
         timeoutDuration: 2s   # (timeout 2s)
 
+      cardServiceCB:
+        timeoutDuration: 2s
 # Configuración WebClient (si usas Eureka)
 services:
   customer:
