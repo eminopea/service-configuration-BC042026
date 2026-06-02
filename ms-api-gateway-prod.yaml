@@ -30,6 +30,11 @@ spring:
           uri: lb://ms-account
           predicates:
             - Path=/accounts/**
+
+        - id: ms-card
+          uri: lb://ms-card
+          predicates:
+            - Path=/card/**
 eureka:
   client:
     service-url:
