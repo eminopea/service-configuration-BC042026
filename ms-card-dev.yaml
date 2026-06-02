@@ -49,4 +49,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 server:
-  port: 7083
+  port: 7084
