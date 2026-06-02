@@ -34,7 +34,7 @@ spring:
         - id: ms-card
           uri: lb://ms-card
           predicates:
-            - Path=/card/**
+            - Path=/cards/**
 
 eureka:
   client:
