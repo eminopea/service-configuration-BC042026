@@ -1,12 +1,12 @@
 booking:
-  property: Profile Card Dev Profile
+  property: Profile Credit Dev Profile
 
 spring:
   application:
-    name: ms-card
+    name: ms-credit
   data:
     mongodb:
-      uri: mongodb://localhost:27017/carddb
+      uri: mongodb://localhost:27017/creditdb
     redis:
       host: localhost
       port: 6379
@@ -22,20 +22,20 @@ spring:
          max-idle: 8
          min-idle: 0
 
-  kafka:
-    bootstrap-servers: localhost:29092
-
-    consumer:
-      group-id: card-group
-      auto-offset-reset: earliest
-
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-
-app:
-  kafka:
-    topics:
-      account-created: account-created
+#  kafka:
+#    bootstrap-servers: localhost:29092
+#
+#    consumer:
+#      group-id: card-group
+#      auto-offset-reset: earliest
+#
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#
+#app:
+#  kafka:
+#    topics:
+#      account-created: account-created
 
 eureka:
   client:
