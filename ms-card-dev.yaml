@@ -27,13 +27,8 @@ spring:
 
     consumer:
       group-id: card-group
-      auto-offset-reset: earliest
-
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest 
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      
-      properties:
-        spring.json.trusted.packages: "*"
 
 
 app:
