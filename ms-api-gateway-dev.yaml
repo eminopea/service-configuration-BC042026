@@ -36,6 +36,11 @@ spring:
           predicates:
             - Path=/cards/**
 
+        - id: ms-credit
+          uri: lb://ms-credit
+          predicates:
+            - Path=/credit/**
+
 eureka:
   client:
     service-url:
