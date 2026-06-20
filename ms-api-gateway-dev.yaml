@@ -39,7 +39,7 @@ spring:
         - id: ms-credit
           uri: lb://ms-credit
           predicates:
-            - Path=/credit/**
+            - Path=/credits/**
 
 eureka:
   client:
